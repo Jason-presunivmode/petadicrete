@@ -63,20 +63,17 @@ def graph_visualization_page():
 
         # Draw the graph
         plt.figure(figsize=(8, 6))
-        nx.draw(
-            G,
-            with_labels=True,
-            node_color="skyblue",
-            node_size=2000,
-            font_size=10,
-            font_weight="bold",
-            edge_color="gray"
-        )
+        nx.draw(G,
+                with_labels=True,
+                node_color="skyblue",
+                node_size=2000,
+                font_size=10,
+                font_weight="bold",
+                edge_color="gray")
         plt.title("Randomly Generated Graph")
 
         # Display the graph
         st.pyplot(plt)
-
 
 # --- Page 3: Province Map Visualization ---
 def map_visualization_page():
@@ -102,53 +99,40 @@ def map_visualization_page():
                 for i, city1 in cities_df.iterrows():
                     for j, city2 in cities_df.iterrows():
                         if i < j:
-                            connections.append({
-                                "start_lat": city1["lat"],
-                                "start_lon": city1["lon"],
-                                "end_lat": city2["lat"],
-                                "end_lon": city2["lon"],
-                            })
+                            connections.append({"start_lat": city1["lat"],
+                                                "start_lon": city1["lon"],
+                                                "end_lat": city2["lat"],
+                                                "end_lon": city2["lon"],})
                 connections_df = pd.DataFrame(connections)
 
                 # Render the map
                 st.pydeck_chart(
-                    pdk.Deck(
-                        map_style="mapbox://styles/mapbox/streets-v11",
-                        initial_view_state=pdk.ViewState(
-                            latitude=cities_df["lat"].mean(),
-                            longitude=cities_df["lon"].mean(),
-                            zoom=8,
-                        ),
+                    pdk.Deck(map_style="mapbox://styles/mapbox/streets-v11",
+                            initial_view_state=pdk.ViewState(
+                                latitude=cities_df["lat"].mean(),
+                                longitude=cities_df["lon"].mean(),
+                                zoom=8,),
                         layers=[
-                            pdk.Layer(
-                                "ScatterplotLayer",
-                                data=cities_df,
-                                get_position="[lon, lat]",
-                                get_color="[200, 30, 30, 160]",
-                                get_radius=1500,
-                            ),
-                            pdk.Layer(
-                                "LineLayer",
-                                data=connections_df,
-                                get_source_position=["start_lon", "start_lat"],
-                                get_target_position=["end_lon", "end_lat"],
-                                get_color="[50, 50, 200, 150]",
-                                get_width=2,
-                            ),
-                        ],
-                    )
-                )
+                            pdk.Layer("ScatterplotLayer",
+                                        data=cities_df,
+                                        get_position="[lon, lat]",
+                                        get_color="[200, 30, 30, 160]",
+                                        get_radius=1500,),
+                            pdk.Layer("LineLayer",
+                                        data=connections_df,
+                                        get_source_position=["start_lon", "start_lat"],
+                                        get_target_position=["end_lon", "end_lat"],
+                                        get_color="[50, 50, 200, 150]",
+                                        get_width=2,),],))
             else:
                 st.warning("Please select at least one city to generate the map.")
 
 
 # --- Page Navigation ---
 st.sidebar.title("Navigation")
-pages = {
-    "Profile Page": profile_page,
-    "Graph Visualization": graph_visualization_page,
-    "Map Visualization": map_visualization_page,
-}
+pages = {"Profile Page": profile_page,
+        "Graph Visualization": graph_visualization_page,
+        "Map Visualization": map_visualization_page,}
 
 # Sidebar for selecting a page
 selected_page = st.sidebar.radio("Go to", list(pages.keys()))
