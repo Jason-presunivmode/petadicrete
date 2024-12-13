@@ -10,8 +10,8 @@ from city_data import provinces_data  # Import the city data
 st.markdown(
     """
     <style>
-    .css-1v3fvcr { font-size: 20px !important; }
-    .css-1v3fvcr span { font-size: 20px !important; }
+    .css-1v3fvcr { font-size: 40px !important; }
+    .css-1v3fvcr span { font-size: 40px !important; }
     </style>
     """,
     unsafe_allow_html=True,
