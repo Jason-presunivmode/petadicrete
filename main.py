@@ -28,6 +28,7 @@ def profile_page():
     with col1:
         st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest3.jpg", use_container_width=True)
         st.text("Jason Matthew Pham")
+        st.markdown("<p style='text-align: center; font-size: 16px;'>Jason Matthew Pham</p>", unsafe_allow_html=True)
 
     with col2:
         st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest2.jpg", caption="Person 2", use_container_width=True)
