@@ -31,12 +31,11 @@ def profile_page():
 
     with col2:
         st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest2.jpg", caption="Person 2", use_container_width=True)
-        st.text("Risma Choerunnisa")
+        st.markdown("<p style='text-align: center; font-size: 16px;'>Risma Choerunnisa</p>", unsafe_allow_html=True)
 
     with col3:
         st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest1.jpg", caption="Person 3", use_container_width=True)
-        st.text("Bunga Aulia")
-
+        st.markdown("<p style='text-align: center; font-size: 16px;'>Bunga Aulia</p>", unsafe_allow_html=True)
 
 # --- Page 2: Graph Visualization ---
 def graph_visualization_page():
