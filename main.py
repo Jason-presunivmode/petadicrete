@@ -26,7 +26,7 @@ def profile_page():
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest3.jpg", caption="Person 1", use_container_width=True)
+        st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest3.jpg", use_container_width=True)
         st.text("Jason Matthew Pham")
 
     with col2:
