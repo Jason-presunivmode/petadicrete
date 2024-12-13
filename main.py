@@ -26,15 +26,15 @@ def profile_page():
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest3.jpg", caption="Person 1", use_column_width=True)
+        st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest3.jpg", caption="Person 1", use_container_width=True)
         st.text("Jason Matthew Pham")
 
     with col2:
-        st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest2.jpg", caption="Person 2", use_column_width=True)
+        st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest2.jpg", caption="Person 2", use_container_width=True)
         st.text("Risma Choerunnisa")
 
     with col3:
-        st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest1.jpg", caption="Person 3", use_column_width=True)
+        st.image("https://raw.githubusercontent.com/Jason-presunivmode/petadicrete/refs/heads/main/Guest1.jpg", caption="Person 3", use_container_width=True)
         st.text("Bunga Aulia")
 
 
